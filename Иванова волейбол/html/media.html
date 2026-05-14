@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мультимедиа | Волейбольный клуб "Зенит"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <!-- Шапка с логотипами -->
+    <header class="header">
+        <div class="container">
+            <div class="logos">
+                <div class="logo-zenit">
+                    <div class="logo-circle"></div>
+                    <div class="logo-text">
+                        <div class="zenit-text">ЗЕНИТ</div>
+                        <div class="zenit-subtext">ВОЛЕЙБОЛЬНЫЙ КЛУБ</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навигационная панель -->
+            <div class="nav-container">       <!-- объединяет меню -->
+                <ul class="nav-items">            <!-- список меню -->
+                    <li class="nav-item">             <!-- Каждый отдельный пункт меню-->
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-newspaper nav-icon"></i>
+                            <span class="nav-text">Новости клуба</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="media.html" class="nav-link">
+                            <i class="fas fa-photo-video nav-icon"></i>
+                            <span class="nav-text">Мультимедиа</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tickets.html" class="nav-link">
+                            <i class="fas fa-ticket-alt nav-icon"></i>
+                            <span class="nav-text">Продажа билетов</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="merch.html" class="nav-link">
+                            <i class="fas fa-tshirt nav-icon"></i>
+                            <span class="nav-text">Мерч</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="content-block">
+            <div class="block-header">
+                <i class="fas fa-photo-video block-icon"></i>
+                <h2 class="block-title">Мультимедиа</h2>
+            </div>
+            
+            <p>Фото и видео материалы с матчей, тренировок и мероприятий клуба.</p>
+            
+            <div class="gallery-grid">
+                <!-- Матч -->
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/n5ThZG0/match-photo.jpg" alt="Волейбольный матч">
+                    <div class="gallery-overlay">
+                        <div style="font-weight: 600;">Волейбольный матч</div>
+                        <div style="font-size: 12px;">Май 2025</div>
+                    </div>
+                </div>
+                
+                <!-- Тренировка -->
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/bg4QYTs6/training.jpg" alt="Тренировка команды">
+                    <div class="gallery-overlay">
+                        <div style="font-weight: 600;">Тренировка команды</div>
+                        <div style="font-size: 12px;">14 мая 2025</div>
+                    </div>
+                </div>
+                
+                <!-- Интервью -->
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/d0FmQB3s/interview.jpg" alt="Интервью">
+                    <div class="gallery-overlay">
+                        <div style="font-weight: 600;">Интервью с капитаном</div>
+                        <div style="font-size: 12px;">13 мая 2025</div>
+                    </div>
+                </div>
+                
+                <!-- Награждение-->
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/Kjn5kS4d/award.jpg" alt="Награждение">
+                    <div class="gallery-overlay">           <!-- добавляет слой поверх изображения-->
+                        <div style="font-weight: 600;">Награждение игроков</div>
+                        <div style="font-size: 12px;">10 мая 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Контакты</a>
+                    <a href="#" class="footer-link">Расписание</a>
+                    <a href="#" class="footer-link">Команда</a>
+                    <a href="#" class="footer-link">История</a>
+                    <a href="#" class="footer-link">Партнеры</a>
+                </div>
+                <div class="copyright">
+                    2025 Волейбольный клуб "Зенит". Все права защищены.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>

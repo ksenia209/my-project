@@ -1,0 +1,627 @@
+:root {
+            --dark-blue: #0e1c36;
+            --nav-blue: #0231be;
+            --active-blue: #2a4a9a;
+            --light-blue: #3a6ae8;                      /* Эти стили задают палитру цветов для сайта */
+            --gold: #ffd700;
+            --white: #ffffff;
+            --gray: #b0b0b0;
+            --dark-gray: #8a8a8a;
+        }
+
+        * {
+        margin: 0;                                           /* Убираем внешние отступы */
+            padding: 0;                                     /* Убираем внутренние отступы */
+            box-sizing: border-box;                        /* Включаем размеры границ и внутренних отступов в ширину элемента */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;          /* шрифт */
+            background-color: var(--dark-blue);         /* цвет фона тёмно-синий */
+            color: var(--white);                        /* цвет текста белый */
+            line-height: 1.5;                           /* межстрочное расстояние */
+            min-height: 100vh;                          /* минимальная высота окна браузера */
+        }
+
+        .container {
+            max-width: 1200px;                          /* максимальная ширина блока */
+            margin: 0 auto;                            /* центровка по центру страницы */
+            padding: 0 20px;                          /* поля внутри блока слева и справа */
+        }
+
+        /* шапка с логотипами */
+        .header {
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-zenit {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .logo-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 48px;
+            background: linear-gradient(135deg, #1c3aa9, #3a6ae8);
+            color: white;
+            box-shadow: 0 8px 25px rgba(1, 36, 124, 0.4);
+            overflow: hidden;
+        }
+
+        /* Логотип клуба вместо буквы */
+        .logo-circle::before {
+            content: '';                                              /* пустой контент */
+            display: block;                                          /* отображение как блочного элемента */
+            width: 100%;                                            /*  ширина */
+            height: 100%;                                          /* высота */
+            background-image: url('https://i.ibb.co/Ng5jPsPM/zenit-logo-new.png');
+            background-size: contain;                             /* размер логотипа */
+            background-repeat: no-repeat;                       /* отсутствие повторения фона */
+            background-position: center;                        /* логотип по центру*/
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;                         /*вертикальная ориентация*/
+        }
+
+        .zenit-text {
+            font-family: 'Montserrat', sans-serif;              /*шрифты*/
+            font-size: 64px;                                   /*размер шрифта*/
+            font-weight: 900;                                 /*жирность шрифта*/
+            color: var(--white);                             /* цвет */
+            text-transform: uppercase;                      /* преобразование текста в верхний регистр */
+            letter-spacing: 2px;                           /* расстояние между буквами */
+            line-height: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);                      /* тенеевой эффект */
+            background: linear-gradient(135deg, var(--white), #e0e0ff);      /* градиентный фон */
+            -webkit-background-clip: text;                                    /* обрезка фона текстом */
+            -webkit-text-fill-color: transparent;                            /* прозрачный цвет заполнения текста */
+            background-clip: text;
+        }
+
+        .zenit-subtext {
+            font-size: 18px;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-top: 10px;
+            font-weight: 600;
+            text-transform: uppercase;                                 /* заглавные буквы */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);             /* лёгкая тень */
+        }
+
+        /* навигационная панель */
+        .nav-container {
+            background-color: var(--nav-blue);  /*цвет панели*/
+            border-radius: 12px;                /*скругление углов*/
+            padding: 15px 30px;                 /* Внутренние отступы */
+            margin-bottom: 50px;                /*отступ снизу*/
+        }
+
+        .nav-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            position: relative;         /*родственник*/
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;                 /*выравнивание по центру*/
+            align-items: center;
+            padding: 15px 30px;
+            cursor: pointer;                      /* Курсор изменения при наведении */
+            transition: all 0.3s ease;           /* Переход эффектов плавно */
+            position: relative;
+            z-index: 2;                         /* Порядок наложения */
+        }
+
+        .nav-icon {
+            font-size: 24px;            /*размер иконки*/
+            margin-bottom: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-text {
+            font-size: 14px;
+            font-weight: 500;               /*размер текста, расстояние между буквами и плавные переходы*/
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .nav-item:not(.active) .nav-icon {          
+            color: var(--gray);
+        }
+
+        .nav-item:not(.active) .nav-text {
+            color: var(--dark-gray);
+        }
+
+        .nav-item.active {
+            background-color: var(--active-blue);       /*фон меню*/
+            border-radius: 10px;
+            transform: translateY(-2px);
+        }
+
+        .nav-item.active .nav-icon {            /*иконка активного пункта*/
+            color: var(--white);
+        }
+
+        .nav-item.active .nav-text {
+            color: var(--white);            /*текст*/
+            font-weight: 600;
+        }
+
+        /* стили для вкладок */
+        .tab-content {
+            display: none;                      /*  скрытый контент вкладки */ 
+            animation: fadeIn 0.5s ease;        /* Анимация появления за 0.5 секунды */
+        }
+
+        .tab-content.active {
+            display: block;                     /*показывает активный контент*/
+        }
+
+        @keyframes fadeIn {                 /*для описания анимации*/
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* общие стили контента */
+        .main-content {
+            display: grid;                  /*создает сетку для удобного размещения элементов*/
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .left-column, .right-column {
+            display: flex;                      /*определяющий область*/
+            flex-direction: column;             /*определяет вдоль какой оси будет распологаться элемент*/
+            gap: 40px;
+        }
+
+        /* Стили для фото-блоков */
+        .photo-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            height: 380px;
+        }
+
+        .photo-container img {
+            width: 100%;                            /* Ширина картинки равна ширине контейнера */
+            height: 100%;                           /*высота*/
+            object-fit: cover;                      /* Масштабирует картинку, сохраняя пропорции */
+            transition: transform 0.5s;             /* Время эффекта трансформации */
+        }
+
+        .photo-container:hover img {
+            transform: scale(1.03);                  /* Увеличение картинки при наведении мыши */
+        }
+
+        .photo-overlay {                    /*полупрозрачный слой поверх другого элемента*/
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(14, 28, 54, 0.95), transparent);
+            padding: 30px 25px 20px;
+        }
+
+        .photo-title {
+            font-family: 'Montserrat', sans-serif;      
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .photo-subtitle {
+            font-size: 16px;
+            color: var(--gray);
+        }
+
+        /* Стили для карточек */
+        .content-block {
+            background: linear-gradient(135deg, rgba(28, 44, 92, 0.9), rgba(14, 28, 54, 0.9));
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-blue);
+        }
+
+        .block-icon {
+            font-size: 28px;
+            color: var(--light-blue);
+        }
+
+        .block-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* кнопки */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--light-blue), #2a4a9a);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(58, 106, 232, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(58, 106, 232, 0.4);
+            background: linear-gradient(135deg, #4a7aff, #3a6ae8);
+        }
+
+        .merch-btn {
+            background: linear-gradient(135deg, var(--gold), #e6c300);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .merch-btn:hover {
+            box-shadow: 0 6px 18px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #ffdf33, var(--gold));
+        }
+
+        /* стили для разделов новости */
+        .news-stats {
+            display: flex;
+            gap: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--light-blue);
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* стили для мультимедиа */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {                          /* элемент галереи при наведении курсора */
+            opacity: 1;
+        }
+
+        /* стили для раздела билеты  */
+        .matches-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .match-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--light-blue);
+        }
+
+        .match-teams {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .team-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .match-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .match-date {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .match-stadium {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        /* стили для раздела атрибутики */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(58, 106, 232, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            color: var(--gold);
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        /* футер */
+        .footer {
+            background-color: rgba(14, 28, 54, 0.8);
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-link {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+
+        /* адаптивность */
+        @media (max-width: 1024px) {
+            .container {                    /*уменьшает внутренний отступ*/
+                padding: 0 15px;
+            }
+            
+            .main-content {                     /*меняет сеточную структуру т.е. колонки становятся одной*/
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .nav-container {
+                padding: 10px 15px;
+            }
+            
+            .nav-item {                         /*внутреннее заполнение*/
+                padding: 12px 15px;
+            }
+            
+            .zenit-text {
+                font-size: 48px;
+            }
+            
+            .gallery-grid,                              /*сокращение чисел колонок до двух*/
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logos {
+                margin-bottom: 30px;
+            }
+            
+            .logo-zenit {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .zenit-text {
+                font-size: 42px;
+            }
+            
+            .zenit-subtext {
+                font-size: 16px;
+                letter-spacing: 3px;
+            }
+            
+            .nav-items {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .gallery-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {                           /*содержит информацию о подвале*/
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .footer-links {                     /*группа ссыллок расположенных в подвале*/
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-item {
+                padding: 10px 12px;
+            }
+            
+            .nav-text {
+                font-size: 12px;
+            }
+            
+            .zenit-text {
+                font-size: 36px;
+            }
+            
+            .zenit-subtext {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+            
+            .logo-circle {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .photo-title {
+                font-size: 22px;
+            }
+            
+            .block-title {
+                font-size: 20px;
+            }
+            
+            .product-name {
+                font-size: 14px;
+            }
+            
+            .product-price {
+                font-size: 18px;
+            }
+        }

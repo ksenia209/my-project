@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зенит | Официальный сайт волейбольного клуба</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Шапка с логотипами -->
+    <header class="header">                        <!-- главная шапка страницы -->      
+        <div class="container">                      <!-- огр. ширину -->
+            <div class="logos">                         <!-- блок -->
+                <div class="logo-zenit">
+                    <div class="logo-circle"></div>         <!-- круглая форма лого -->
+                    <div class="logo-text">
+                        <div class="zenit-text">ЗЕНИТ</div>         
+                        <div class="zenit-subtext">ВОЛЕЙБОЛЬНЫЙ КЛУБ</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навигационная панель -->
+            <div class="nav-container">                       <!-- объединяет все меню -->
+                <ul class="nav-items">                          <!-- список пунктов -->
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">          <!-- гиперссылка. применяются общие стили для всех ссылок -->
+                            <i class="fas fa-newspaper nav-icon"></i>       <!-- иконка -->
+                            <span class="nav-text">Новости клуба</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media.html" class="nav-link">
+                            <i class="fas fa-photo-video nav-icon"></i>
+                            <span class="nav-text">Мультимедиа</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tickets.html" class="nav-link">
+                            <i class="fas fa-ticket-alt nav-icon"></i>
+                            <span class="nav-text">Продажа билетов</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="merch.html" class="nav-link">
+                            <i class="fas fa-tshirt nav-icon"></i>
+                            <span class="nav-text">Мерч</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="main-content">
+            <!-- Левая колонка -->
+            <div class="left-column">
+                <!-- Главное фото -->
+                <div class="photo-container">
+                    <img src="https://i.ibb.co/spWv2wKZ/volleyball-match.jpg"
+                         alt="Волейбольный матч">
+                    <div class="photo-overlay">         <!-- наложение текста по верх фото -->
+                        <h2 class="photo-title">Захватывающие матчи и лиги</h2>
+                        <p class="photo-subtitle">Следите за нашими выступлениями в чемпионатах</p>
+                    </div>
+                </div>
+
+                <!-- Блок с билетами -->
+                <div class="content-block">
+                    <div class="block-header">
+                        <i class="fas fa-ticket-alt block-icon"></i>
+                        <h2 class="block-title">Билеты на матчи</h2>
+                    </div>
+                    <div class="tickets-content">
+                        <p>Не пропустите главные матчи сезона. Приобретайте билеты заранее и получите лучшие места на трибунах.</p>
+                        <a href="tickets.html" class="btn" style="margin-top: 20px; text-decoration: none;">Купить билеты</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка -->
+            <div class="right-column">
+                <!-- Блок новостей -->
+                <div class="content-block">
+                    <div class="block-header">
+                        <i class="fas fa-bullhorn block-icon"></i>
+                        <h2 class="block-title">НОВОСТИ</h2>
+                    </div>
+                    <div class="news-content">
+                        <h3 style="font-size: 20px; margin-bottom: 15px; color: var(--white);">Самые интересные моменты атаки</h3>
+                        <p style="margin-bottom: 20px;">В последнем матче команда показала феноменальную игру в атаке. Особенно впечатлили комбинации через первого темпа и работа диагональных нападающих.</p>
+                        
+                        <div class="news-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">передач</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">атак до пола</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">94%</span>
+                                <span class="stat-label">успешных приемов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок мерча -->
+                <div class="content-block">
+                    <div class="block-header">
+                        <i class="fas fa-tshirt block-icon"></i>
+                        <h2 class="block-title">Самая классная атрибутика</h2>
+                    </div>
+                    <div class="merch-content">
+                        <p>Официальная форма и атрибутика клуба. Поддерживайте команду в стиле!</p>
+                        <a href="merch.html" class="btn merch-btn" style="margin-top: 20px; text-decoration: none;">В магазин</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">              <!-- главный контейнер для футера -->
+        <div class="container">              <!-- огр. макс. ширину -->
+            <div class="footer-content">
+                <div class="footer-links">     <!-- Группирует ссылки нижнего колонтитула. Такой подход удобен для быстрого изменения общего стиля ссылок (цвет, шрифт, выравнивание и т.д.)-->
+                    <a href="#" class="footer-link">Контакты</a>
+                    <a href="#" class="footer-link">Расписание</a>
+                    <a href="#" class="footer-link">Команда</a>
+                    <a href="#" class="footer-link">История</a>
+                    <a href="#" class="footer-link">Партнеры</a>
+                </div>
+                <div class="copyright">
+                     2025 Волейбольный клуб "Зенит". Все права защищены.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>
